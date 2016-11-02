@@ -6,37 +6,42 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title></title>
+    <title>Pig Dice</title>
   </head>
   <body>
     <div class="container">
-      <h1>PIG!</h1>
-      <form id="pig-game">
-        <div class="container">
+      <div class = "jumbotron">
+        <h1 class="text-center">PIG!</h1>
+      </div>
+          <p class="text-center">What is pig dice? Here's a <a href="https://en.wikipedia.org/wiki/Pig_%28dice_game%29" target="_blank">link</a> to read more about this exciting game!</p>
+
           <div class="row">
-             <div class="col-md-6" "well">
+             <div class="col-md-6 well">
                <h2>Player 1</h2>
                <h2>Player 2</h2>
              </div>
-          <div class="col-md-6" "well">
-            <h2>DIE ROLL</h2>
-             <button type="submit" class="btn btn-primary" id="player1-roll">Roll</button>
-             <br>
-             <p>You rolled a:<span id="die-result"></span></p>
-             <button type="submit" class="btn btn-primary" id="player1-hold">HOLD</button>
+          <div class="col-md-6 well">
+          <form id="form1">
+            <h2>DIE ROLL</h2
+            <div id = "die1" class = "dice"></div>
+              <button id = "dieRoll" class="btn btn-primary">Roll</button>
+              <p id = "status" style="clear:left;"></p>
+             <!--<button type="submit" class="btn btn-primary" id="player1-hold">HOLD</button> Indicate current tally
             <h2>SCORE:</h2>
-
-
-            <h2>SCORE:</H2>
-            <h2>DIE ROLL</h2>
-              <button type="submit" class="btn btn-primary" id="player2">Roll</button>
-              <br>
-              <p>You rolled a:<span id="die-result"></span></p>
+           </form> -->
+          <!-- <form id="form2"> -->
+            <!-- <h2>DIE ROLL</h2>
+              <div id = "die2" class = "dice">0</div>
+              <button onlcick="pigDice();" class="btn btn-primary">Roll</button>
+              <p id = "status2" "clear:left;"></p>
               <button type="submit" class="btn btn-primary" id="player2-hold">HOLD</button>
-            <h2>SCORE:</h2>
+            <h2>SCORE:</h2> -->
+        <!-- </form> -->
           </div>
         </div>
-      </div>
+        <div id = "winner" class = "text-center">
+          <h2>PLAYER <span id="message"></span> WINS!</h2>
+        </div>
     </div>
   </body>
 </html>
