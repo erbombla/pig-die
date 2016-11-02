@@ -40,8 +40,6 @@ scoreBoard.prototype.scoreManinpulation = function(d1) {
   // }
 }
 
-debugger;
-
 $(function(){
   $("#dieRoll").click(function(event){
     var die1 = document.getElementById("die1");
