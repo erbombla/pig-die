@@ -1,43 +1,54 @@
-//back-end
+//ass-end
 
-function Player () {
-  this.totalscore = 0
-  this.tally = 0
-  // this.currentTurn
+function Player (totalScore, tally) {
+  this.totalscore = totalScore;
+  this.tally = tally;
 }
   Player.prototype.rollDie = function() {
     var rollDie = Math.floor((Math.random() * 6) + 1);
-    // this.currentTurn
-    if (rollDie >= 1) {
-      this.tally += rollDie;
-    } else {
-      this.tally = 0;
-    }
-
     return rollDie
+    this.tally = rollDie + this.tally
   };
+  // Player.prototype.Tally = function() {
+  // }
 
+var playerOne = Player(0, 0)
+var playerTwo = Player(0, 0)
 
 //front-end
 
 $(function(){
-  $("#roll-button").click(function(event){
-    var newPlayer = new Player()
-    $("#die").text(newPlayer.rollDie());
-    // newPlayer.turnScore = newPlayer.rollDie();
-
+  $("#roll-button").click(function(event) {
     event.preventDefault();
-  });
+    var newPlayer = new Player();
+    var rollResult = newPlayer.rollDie();
+    $("#die").text(rollResult);
+// console.log(this.tally);
+//   $("#tally").text(this.tally); {
+//     var newPlayer = new Player();
+//     var tallyResult = this.tally.rollDie();
+//       }
 
+    // $("#hold-button").submit(function(event) {
+    // event.preventDefault();
+    //var depositTally = parseInt($("#tally").val());
+    // Player.rollDie(playerOne, tallyResult);
+    //     $("#score1").text(playerOne.tally);
     //
-  $("#hold-button1").click(function(event){
-    var newPlayer = new Player()
-    $("#hold1").text(newPlayer.rollDie());
-        console.log(newPlayer.tally)
-
-
+    //     $("#tally").val("");
   });
+  function blinker() {
+  $('.blink').fadeOut(500);
+  $('.blink').fadeIn(500);
+}
+  setInterval(blinker, 1000);
+
 });
+    //
+  // $("#hold-button1").click(function(event){
+  //   var newPlayer = new Player()
+  //   $("#hold1").text(newPlayer.rollDie());
+  //
     // rollDice.score = rollDice.diceRoll(rollDice);
 
 
