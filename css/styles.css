@@ -22,7 +22,7 @@ div.scorebox {
 }
 
 div.hold {
-  float:left;
+  float:right;
   width:32px;
   border:#999 1px solid;
   border-radius: 10%;

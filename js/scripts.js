@@ -1,45 +1,46 @@
 //back-end
 
 function Player () {
-  this.score = 0
-  // this.sides = 6;
-  // this.roll = roll;
-  // this.tally = tally;
-  // this.hold = hold;
-  // this.total = total;
+  this.totalscore = 0
+  this.tally = 0
+  // this.currentTurn
 }
-//
-//
-// submit function event (dieRoll){
-//   d1
-//   return Math.floor(Math.random() * 6) + 1);
-// }
-//
-// ...prototype.diceRoll = function(rollDice) {
-//   var d1 = Math.floor(Math.random() * 6) + 1);
-//   if (d1 > 1) {
-//     this.score += d1;
-//     return this.score;
-//   }
-// }
-Player.prototype.rollDie = function(){
-  return Math.floor((Math.random() * 6) + 1);
-}
+  Player.prototype.rollDie = function() {
+    var rollDie = Math.floor((Math.random() * 6) + 1);
+    // this.currentTurn
+    if (rollDie >= 1) {
+      this.tally += rollDie;
+    } else {
+      this.tally = 0;
+    }
+
+    return rollDie
+  };
+
+
 //front-end
 
 $(function(){
-  $("#dieRoll").click(function(event){
+  $("#roll-button").click(function(event){
     var newPlayer = new Player()
+    $("#die").text(newPlayer.rollDie());
+    // newPlayer.turnScore = newPlayer.rollDie();
+
     event.preventDefault();
-
-    newPlayer.turnScore = newPlayer.rollDie();ß
-
-    $("#die1").text(newPlayer.rollDie());
-
-    // rollDice.score = rollDice.diceRoll(rollDice);
   });
 
+    //
+  $("#hold-button1").click(function(event){
+    var newPlayer = new Player()
+    $("#hold1").text(newPlayer.rollDie());
+        console.log(newPlayer.tally)
+
+
+  });
 });
+    // rollDice.score = rollDice.diceRoll(rollDice);
+
+
 
     // score = new scoreBoard(score);
       //     $("#score").text(score.balance);
